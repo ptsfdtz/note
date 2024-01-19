@@ -20,4 +20,8 @@ https://hub.docker.com/
     docker pull [选项] [Docker Registry 地址[:端口号]/]仓库名[:标签]
 ```
 
-2.
+2. 使用 Docker 镜像
+
+```sh
+
+```

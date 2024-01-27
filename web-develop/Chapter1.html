@@ -88,7 +88,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="../learn-language/Intro.html"><strong aria-hidden="true">1.</strong> 语言学习</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../learn-language/Chapter1.html"><strong aria-hidden="true">1.1.</strong> JavaScript</a></li></ol></li><li class="chapter-item expanded "><a href="../tool-usage/Intro.html"><strong aria-hidden="true">2.</strong> 工具使用</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../tool-usage/Chapter1.html"><strong aria-hidden="true">2.1.</strong> Git</a></li><li class="chapter-item expanded "><a href="../tool-usage/Chapter2.html"><strong aria-hidden="true">2.2.</strong> Docker</a></li><li class="chapter-item expanded "><a href="../tool-usage/Chapter3.html"><strong aria-hidden="true">2.3.</strong> wireguard</a></li></ol></li><li class="chapter-item expanded "><a href="../web-develop/Intro.html"><strong aria-hidden="true">3.</strong> 网页搭建</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../web-develop/Chapter1.html" class="active"><strong aria-hidden="true">3.1.</strong> mdbook</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../learn-language/Intro.html"><strong aria-hidden="true">1.</strong> 学习</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../learn-language/Chapter1.html"><strong aria-hidden="true">1.1.</strong> JavaScript</a></li></ol></li><li class="chapter-item expanded "><a href="../tool-usage/Intro.html"><strong aria-hidden="true">2.</strong> 工具</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../tool-usage/Chapter1.html"><strong aria-hidden="true">2.1.</strong> Git</a></li><li class="chapter-item expanded "><a href="../tool-usage/Chapter2.html"><strong aria-hidden="true">2.2.</strong> Docker</a></li><li class="chapter-item expanded "><a href="../tool-usage/Chapter3.html"><strong aria-hidden="true">2.3.</strong> wireguard</a></li></ol></li><li class="chapter-item expanded "><a href="../web-develop/Intro.html"><strong aria-hidden="true">3.</strong> 搭建</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../web-develop/Chapter1.html" class="active"><strong aria-hidden="true">3.1.</strong> mdbook</a></li><li class="chapter-item expanded "><a href="../web-develop/Chapter2.html"><strong aria-hidden="true">3.2.</strong> react</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
@@ -173,7 +173,42 @@
 
                 <div id="content" class="content">
                     <main>
-                        
+                        <h1 id="mdbook"><a class="header" href="#mdbook">mdbook</a></h1>
+<ol>
+<li>安装 mdbook</li>
+</ol>
+<p><a href="https://github.com/rust-lang/mdBook/releases">下载链接</a></p>
+<ol start="2">
+<li>配置 mdbook 环境</li>
+</ol>
+<p>配置你的下载文件到环境变量中<code>Path</code>路径中</p>
+<ol start="3">
+<li>安装 vscode 预览插件</li>
+</ol>
+<p>vscode 拓展中下载</p>
+<ul>
+<li>
+<p>Markdown All in One</p>
+</li>
+<li>
+<p>Markdown Preview Enhanced</p>
+</li>
+</ul>
+<ol start="4">
+<li>mdbook 编译和预览</li>
+</ol>
+<ul>
+<li>编译 mdbook</li>
+</ul>
+<pre><code class="language-sh">mdbook build
+</code></pre>
+<pre><code class="language-sh">mdbook build -o
+</code></pre>
+<p>-预览 mdbook</p>
+<pre><code class="language-sh">mdbook watch -o
+</code></pre>
+<p>mdbook 会自动编译项目，无需手动编译</p>
+
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
@@ -182,6 +217,9 @@
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
+                            <a rel="next prefetch" href="../web-develop/Chapter2.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
 
                         <div style="clear: both"></div>
                     </nav>
@@ -193,6 +231,9 @@
                         <i class="fa fa-angle-left"></i>
                     </a>
 
+                    <a rel="next prefetch" href="../web-develop/Chapter2.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
             </nav>
 
         </div>

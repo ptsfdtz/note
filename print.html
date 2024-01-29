@@ -89,7 +89,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="learn-language/Intro.html"><strong aria-hidden="true">1.</strong> 学习</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="learn-language/Chapter1.html"><strong aria-hidden="true">1.1.</strong> JavaScript</a></li></ol></li><li class="chapter-item expanded "><a href="tool-usage/Intro.html"><strong aria-hidden="true">2.</strong> 工具</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="tool-usage/Chapter1.html"><strong aria-hidden="true">2.1.</strong> Git</a></li><li class="chapter-item expanded "><a href="tool-usage/Chapter2.html"><strong aria-hidden="true">2.2.</strong> Docker</a></li><li class="chapter-item expanded "><a href="tool-usage/Chapter3.html"><strong aria-hidden="true">2.3.</strong> wireguard</a></li></ol></li><li class="chapter-item expanded "><a href="web-develop/Intro.html"><strong aria-hidden="true">3.</strong> 搭建</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="web-develop/Chapter1.html"><strong aria-hidden="true">3.1.</strong> mdbook</a></li><li class="chapter-item expanded "><a href="web-develop/Chapter2.html"><strong aria-hidden="true">3.2.</strong> react</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="learn-language/Intro.html"><strong aria-hidden="true">1.</strong> 学习</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="learn-language/Chapter1.html"><strong aria-hidden="true">1.1.</strong> JavaScript</a></li></ol></li><li class="chapter-item expanded "><a href="tool-usage/Intro.html"><strong aria-hidden="true">2.</strong> 工具</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="tool-usage/Chapter1.html"><strong aria-hidden="true">2.1.</strong> Powershell</a></li><li class="chapter-item expanded "><a href="tool-usage/Chapter2.html"><strong aria-hidden="true">2.2.</strong> Git</a></li><li class="chapter-item expanded "><a href="tool-usage/Chapter3.html"><strong aria-hidden="true">2.3.</strong> Docker</a></li><li class="chapter-item expanded "><a href="tool-usage/Chapter4.html"><strong aria-hidden="true">2.4.</strong> wireguard</a></li></ol></li><li class="chapter-item expanded "><a href="web-develop/Intro.html"><strong aria-hidden="true">3.</strong> 搭建</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="web-develop/Chapter1.html"><strong aria-hidden="true">3.1.</strong> mdbook</a></li><li class="chapter-item expanded "><a href="web-develop/Chapter2.html"><strong aria-hidden="true">3.2.</strong> react</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
@@ -176,6 +176,90 @@
                     <main>
                         <h1 id="language-learn"><a class="header" href="#language-learn">language learn</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><div style="break-before: page; page-break-before: always;"></div><h1 id="tool-use"><a class="header" href="#tool-use">tool use</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="powershell"><a class="header" href="#powershell">Powershell</a></h1>
+<h2 id="一开启-powershell"><a class="header" href="#一开启-powershell">一.开启 powershell</a></h2>
+<ol>
+<li>
+<p><code>win + R</code>输入 powershell</p>
+</li>
+<li>
+<p>管理员身份运行<code>ctrl + shift + enter</code></p>
+</li>
+</ol>
+<h2 id="二文件相关命令"><a class="header" href="#二文件相关命令">二.文件相关命令</a></h2>
+<ol>
+<li>进入文件夹</li>
+</ol>
+<pre><code class="language-sh">cd ./
+</code></pre>
+<ol start="2">
+<li>返回上级目录</li>
+</ol>
+<pre><code class="language-sh">cd ..
+</code></pre>
+<ol start="3">
+<li>创建新文件</li>
+</ol>
+<pre><code class="language-sh">ni -ItemType Directory -Path &lt;FolderPath&gt;
+</code></pre>
+<ol start="4">
+<li>删除文件</li>
+</ol>
+<pre><code class="language-sh">rm &lt;FilePath&gt;
+</code></pre>
+<ol start="5">
+<li>移动文件</li>
+</ol>
+<pre><code class="language-sh">mv &lt;SourcePath&gt; &lt;DestinationPath&gt;
+</code></pre>
+<ol start="6">
+<li>使用 vscode 打开文件</li>
+</ol>
+<pre><code class="language-sh">code .
+</code></pre>
+<h2 id="三-常用命令"><a class="header" href="#三-常用命令">三. 常用命令</a></h2>
+<h3 id="环境变量"><a class="header" href="#环境变量">环境变量</a></h3>
+<ol>
+<li>显示环境变量</li>
+</ol>
+<pre><code class="language-sh">gci env:
+</code></pre>
+<ol start="2">
+<li>设置环境变量</li>
+</ol>
+<pre><code class="language-sh">$env:Path += &lt;address&gt;
+</code></pre>
+<h3 id="网络配置"><a class="header" href="#网络配置">网络配置</a></h3>
+<ol>
+<li>显示本机 ip</li>
+</ol>
+<pre><code class="language-sh">ipconfig
+</code></pre>
+<ol start="2">
+<li>测试网络链接</li>
+</ol>
+<pre><code class="language-sh">ping &lt;IP&gt;
+</code></pre>
+<ol start="3">
+<li>关闭防火墙</li>
+</ol>
+<pre><code class="language-sh">netsh advfirewall set allprofiles state off
+</code></pre>
+<ol start="4">
+<li>显示网络统计信息</li>
+</ol>
+<pre><code class="language-sh">netstat -an
+</code></pre>
+<ol start="5">
+<li>显示本地路由表</li>
+</ol>
+<pre><code class="language-sh">route print
+</code></pre>
+<ol start="6">
+<li>配置防火墙规则</li>
+</ol>
+<pre><code class="language-sh">Get-NetFirewallRule
+</code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="git-use"><a class="header" href="#git-use">Git use</a></h1>
 <h2 id="一安装-git"><a class="header" href="#一安装-git">一.安装 Git</a></h2>
 <pre><code class="language-sh">https://git-scm.com/downloads
@@ -199,6 +283,26 @@ git config user.email '邮箱'
 </ol>
 <pre><code class="language-sh">git config --list
 </code></pre>
+<ol start="4">
+<li>配置 git</li>
+</ol>
+<p>进入 gitconfig 文件</p>
+<pre><code class="language-sh">vim ~/.gitconfig
+</code></pre>
+<p>添加以下内容</p>
+<pre><code class="language-sh">[user]
+    name=ptsfdtz
+    email=pitousanfadetuzi@gmail.com
+[http]
+    proxy=http://127.0.0.1:7890
+[https]
+    proxy=http://127.0.0.1:7890
+[init]
+    defaultBranch=main
+[pull]
+    ff=only
+</code></pre>
+<p>令 git 使用 clash 代理</p>
 <h2 id="三初次提交模板"><a class="header" href="#三初次提交模板">三.初次提交模板</a></h2>
 <ol>
 <li>项目初始化</li>

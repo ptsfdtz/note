@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Git - notes</title>
+        <title>wireguard - notes</title>
 
 
         <!-- Custom HTML head -->
@@ -88,7 +88,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="../learn-language/Intro.html"><strong aria-hidden="true">1.</strong> 学习</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../learn-language/Chapter1.html"><strong aria-hidden="true">1.1.</strong> JavaScript</a></li></ol></li><li class="chapter-item expanded "><a href="../tool-usage/Intro.html"><strong aria-hidden="true">2.</strong> 工具</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../tool-usage/Chapter1.html"><strong aria-hidden="true">2.1.</strong> Powershell</a></li><li class="chapter-item expanded "><a href="../tool-usage/Chapter2.html" class="active"><strong aria-hidden="true">2.2.</strong> Git</a></li><li class="chapter-item expanded "><a href="../tool-usage/Chapter3.html"><strong aria-hidden="true">2.3.</strong> Docker</a></li><li class="chapter-item expanded "><a href="../tool-usage/Chapter4.html"><strong aria-hidden="true">2.4.</strong> wireguard</a></li></ol></li><li class="chapter-item expanded "><a href="../web-develop/Intro.html"><strong aria-hidden="true">3.</strong> 搭建</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../web-develop/Chapter1.html"><strong aria-hidden="true">3.1.</strong> mdbook</a></li><li class="chapter-item expanded "><a href="../web-develop/Chapter2.html"><strong aria-hidden="true">3.2.</strong> react</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../learn-language/Intro.html"><strong aria-hidden="true">1.</strong> 学习</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../learn-language/Chapter1.html"><strong aria-hidden="true">1.1.</strong> JavaScript</a></li></ol></li><li class="chapter-item expanded "><a href="../tool-usage/Intro.html"><strong aria-hidden="true">2.</strong> 工具</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../tool-usage/Chapter1.html"><strong aria-hidden="true">2.1.</strong> Powershell</a></li><li class="chapter-item expanded "><a href="../tool-usage/Chapter2.html"><strong aria-hidden="true">2.2.</strong> Git</a></li><li class="chapter-item expanded "><a href="../tool-usage/Chapter3.html"><strong aria-hidden="true">2.3.</strong> Docker</a></li><li class="chapter-item expanded "><a href="../tool-usage/Chapter4.html" class="active"><strong aria-hidden="true">2.4.</strong> wireguard</a></li></ol></li><li class="chapter-item expanded "><a href="../web-develop/Intro.html"><strong aria-hidden="true">3.</strong> 搭建</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../web-develop/Chapter1.html"><strong aria-hidden="true">3.1.</strong> mdbook</a></li><li class="chapter-item expanded "><a href="../web-develop/Chapter2.html"><strong aria-hidden="true">3.2.</strong> react</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
@@ -173,94 +173,141 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="git-use"><a class="header" href="#git-use">Git use</a></h1>
-<h2 id="一安装-git"><a class="header" href="#一安装-git">一.安装 Git</a></h2>
-<pre><code class="language-sh">https://git-scm.com/downloads
-</code></pre>
-<h2 id="二配置-git"><a class="header" href="#二配置-git">二.配置 Git</a></h2>
-<p>在 powershell 中输入<code>git</code>检测是否配置完成</p>
-<h3 id="配置用户"><a class="header" href="#配置用户">配置用户</a></h3>
+                        <h1 id="wireguard-use"><a class="header" href="#wireguard-use">wireguard use</a></h1>
+<h2 id="一安装-wireguard"><a class="header" href="#一安装-wireguard">一.安装 wireguard</a></h2>
+<h3 id="在服务端安装"><a class="header" href="#在服务端安装">在服务端安装</a></h3>
 <ol>
-<li>初始化 Git 仓库</li>
+<li>获取 root 权限</li>
 </ol>
-<pre><code class="language-sh">git init
+<pre><code class="language-sh">sudo i
 </code></pre>
 <ol start="2">
-<li>设置用户名和邮箱</li>
+<li>安装 wireguard 软件</li>
 </ol>
-<pre><code class="language-sh">git config user.name 'github用户名'
-git config user.email '邮箱'
+<pre><code class="language-sh">apt install wireguard resolvconf -y
 </code></pre>
-<ol start="3">
-<li>查看邮箱用户配置</li>
-</ol>
-<pre><code class="language-sh">git config --list
-</code></pre>
-<ol start="4">
-<li>配置 git</li>
-</ol>
-<p>进入 gitconfig 文件</p>
-<pre><code class="language-sh">vim ~/.gitconfig
-</code></pre>
-<p>添加以下内容</p>
-<pre><code class="language-sh">[user]
-    name=ptsfdtz
-    email=pitousanfadetuzi@gmail.com
-[http]
-    proxy=http://127.0.0.1:7890
-[https]
-    proxy=http://127.0.0.1:7890
-[init]
-    defaultBranch=main
-[pull]
-    ff=only
-</code></pre>
-<p>令 git 使用 clash 代理</p>
-<h2 id="三初次提交模板"><a class="header" href="#三初次提交模板">三.初次提交模板</a></h2>
+<h2 id="二配置服务端"><a class="header" href="#二配置服务端">二.配置服务端</a></h2>
+<h3 id="配置服务端公钥和私钥"><a class="header" href="#配置服务端公钥和私钥">配置服务端公钥和私钥</a></h3>
 <ol>
-<li>项目初始化</li>
+<li>创建一个文件夹储存公钥和私钥</li>
 </ol>
-<pre><code class="language-sh">git init
-echo &quot;# README&quot; &gt; README.md
-git add README.md
-git commit -m &quot;First commit&quot;
+<pre><code class="language-sh">cd wireguard/clients/
+mkdir example
+cd example
+wg genkey | tee private.key | wg pubkey &gt; public.key #创建example的私钥和公钥
 </code></pre>
 <ol start="2">
-<li>添加远程仓库链接</li>
+<li>进入配置文件路径</li>
 </ol>
-<pre><code class="language-sh">git remote add origin #仓库链接
+<pre><code class="language-sh">sudo vim /etc/wireguard/wg0.conf
 </code></pre>
 <ol start="3">
-<li>默认分支 main</li>
+<li>使用下面的命令查看你的默认网卡：</li>
 </ol>
-<pre><code class="language-sh">git branch -M main
+<pre><code class="language-sh">ip route list table main default
 </code></pre>
+<p>如果网卡不正确<strong>更改默认网卡 将 <code>eth0</code> 改为<code>enp4s0</code></strong></p>
 <ol start="4">
-<li>提交到 github 仓库</li>
+<li>添加私钥和公钥
+添加以下配置：</li>
 </ol>
-<pre><code class="language-sh">git push -f -u origin main
+<pre><code class="language-sh">[Interface]
+PrivateKey = client_private_key
+Address = 10.0.0.2/32
+DNS = 114.114.114.114, 223.5.5.5
+
+[Peer]
+PublicKey = server_public_key
+Endpoint = server_ip:51820
+AllowedIPs = 0.0.0.0/0
+PersistentKeepalive = 25
 </code></pre>
-<h2 id="四常用命令"><a class="header" href="#四常用命令">四.常用命令</a></h2>
+<p><img src="./images/image.png" alt="Alt text" /></p>
+<h3 id="允许端口转发"><a class="header" href="#允许端口转发">允许端口转发</a></h3>
+<ol>
+<li>进入配置文件</li>
+</ol>
+<pre><code class="language-sh">sudo vim /etc/sysctl.conf
+</code></pre>
+<ol start="2">
+<li>取消注释以下内容</li>
+</ol>
+<pre><code class="language-sh">net.ipv4.ip_forward=1
+</code></pre>
+<ol start="3">
+<li>重启或者输入以下命令</li>
+</ol>
+<pre><code class="language-sh">sudo sysctl -p
+</code></pre>
+<h3 id="查询方式"><a class="header" href="#查询方式">查询方式</a></h3>
 <ul>
-<li>查看当前状态</li>
+<li>显示所有生成的密钥</li>
 </ul>
-<pre><code class="language-sh">git status
+<pre><code class="language-sh">cat private.key #显示私钥
+cat public.key #显示公钥
 </code></pre>
 <ul>
-<li>查看提交记录</li>
+<li>显示用户组</li>
 </ul>
-<pre><code class="language-sh">git log
+<pre><code class="language-sh">sudo wg
+</code></pre>
+<h2 id="三下载客户端"><a class="header" href="#三下载客户端">三.下载客户端</a></h2>
+<pre><code class="language-sh">https://www.wireguard.com/install/
+</code></pre>
+<h2 id="四配置客户端"><a class="header" href="#四配置客户端">四.配置客户端</a></h2>
+<h3 id="配置客户端对应私钥和公钥"><a class="header" href="#配置客户端对应私钥和公钥">配置客户端对应私钥和公钥</a></h3>
+<ol>
+<li>
+<p>打开客户端软件 新建隧道</p>
+</li>
+<li>
+<p>在配置文件添加</p>
+</li>
+</ol>
+<pre><code class="language-sh">[Interface]
+PrivateKey = client_private_key
+Address = 10.0.0.2/32
+DNS = 114.114.114.114, 223.5.5.5
+
+[Peer]
+PublicKey = server_public_key
+Endpoint = server_ip:51820
+AllowedIPs = 0.0.0.0/0
+PersistentKeepalive = 25 #必须添加每25ms相应一次
+</code></pre>
+<h2 id="五启动服务"><a class="header" href="#五启动服务">五.启动服务</a></h2>
+<h3 id="开机自启"><a class="header" href="#开机自启">开机自启</a></h3>
+<ol>
+<li>打开开机自启</li>
+</ol>
+<pre><code class="language-sh">systemctl enable wg-quick@wg0
+</code></pre>
+<ol start="2">
+<li>关闭开机自启</li>
+</ol>
+<pre><code class="language-sh">sudo systemctl disable wg-quick@wg0
+</code></pre>
+<ol start="3">
+<li>查询自启状态</li>
+</ol>
+<pre><code class="language-sh">systemctl status wg-quick@wg0
+</code></pre>
+<h3 id="启动-wireguard"><a class="header" href="#启动-wireguard">启动 wireguard</a></h3>
+<pre><code class="language-sh">#启动wg0
+wg-quick up wg0
+#关闭wg0
+wg-quick down wg0
 </code></pre>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="../tool-usage/Chapter1.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../tool-usage/Chapter3.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next prefetch" href="../tool-usage/Chapter3.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next prefetch" href="../web-develop/Intro.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -270,11 +317,11 @@ git commit -m &quot;First commit&quot;
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="../tool-usage/Chapter1.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../tool-usage/Chapter3.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next prefetch" href="../tool-usage/Chapter3.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next prefetch" href="../web-develop/Intro.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>

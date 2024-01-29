@@ -1,27 +1,101 @@
-# Docker use
+# Git use
 
-## 一.Docker 下载
+## 一.安装 Git
 
 ```sh
-https://docs.docker.com/desktop/install/
+https://git-scm.com/downloads
 ```
 
+## 二.配置 Git
+
+在 powershell 中输入`git`检测是否配置完成
+
+### 配置用户
+
+1. 初始化 Git 仓库
+
 ```sh
-https://hub.docker.com/
+git init
 ```
 
-## 二.镜像
-
-### 获取镜像
-
-1. 从 Docker 镜像仓库获取镜像
+2. 设置用户名和邮箱
 
 ```sh
-    docker pull [选项] [Docker Registry 地址[:端口号]/]仓库名[:标签]
+git config user.name 'github用户名'
+git config user.email '邮箱'
 ```
 
-2. 使用 Docker 镜像
+3. 查看邮箱用户配置
 
 ```sh
+git config --list
+```
 
+4. 配置 git
+
+进入 gitconfig 文件
+
+```sh
+vim ~/.gitconfig
+```
+
+添加以下内容
+
+```sh
+[user]
+    name=ptsfdtz
+    email=pitousanfadetuzi@gmail.com
+[http]
+    proxy=http://127.0.0.1:7890
+[https]
+    proxy=http://127.0.0.1:7890
+[init]
+    defaultBranch=main
+[pull]
+    ff=only
+```
+
+令 git 使用 clash 代理
+
+## 三.初次提交模板
+
+1. 项目初始化
+
+```sh
+git init
+echo "# README" > README.md
+git add README.md
+git commit -m "First commit"
+```
+
+2. 添加远程仓库链接
+
+```sh
+git remote add origin #仓库链接
+```
+
+3. 默认分支 main
+
+```sh
+git branch -M main
+```
+
+4. 提交到 github 仓库
+
+```sh
+git push -f -u origin main
+```
+
+## 四.常用命令
+
+- 查看当前状态
+
+```sh
+git status
+```
+
+- 查看提交记录
+
+```sh
+git log
 ```

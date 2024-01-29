@@ -1,75 +1,99 @@
-# Git use
+# Powershell
 
-## 一.安装 Git
+## 一.开启 powershell
+
+1. `win + R`输入 powershell
+
+2. 管理员身份运行`ctrl + shift + enter`
+
+## 二.文件相关命令
+
+1. 进入文件夹
 
 ```sh
-https://git-scm.com/downloads
+cd ./
 ```
 
-## 二.配置 Git
-
-在 powershell 中输入`git`检测是否配置完成
-
-### 配置用户
-
-1. 初始化 Git 仓库
+2. 返回上级目录
 
 ```sh
-git init
+cd ..
 ```
 
-2. 设置用户名和邮箱
+3. 创建新文件
 
 ```sh
-git config user.name 'github用户名'
-git config user.email '邮箱'
+ni -ItemType Directory -Path <FolderPath>
 ```
 
-3. 查看邮箱用户配置
+4. 删除文件
 
 ```sh
-git config --list
+rm <FilePath>
 ```
 
-## 三.初次提交模板
-
-1. 项目初始化
+5. 移动文件
 
 ```sh
-git init
-echo "# README" > README.md
-git add README.md
-git commit -m "First commit"
+mv <SourcePath> <DestinationPath>
 ```
 
-2. 添加远程仓库链接
+6. 使用 vscode 打开文件
 
 ```sh
-git remote add origin #仓库链接
+code .
 ```
 
-3. 默认分支 main
+## 三. 常用命令
+
+### 环境变量
+
+1. 显示环境变量
 
 ```sh
-git branch -M main
+gci env:
 ```
 
-4. 提交到 github 仓库
+2. 设置环境变量
 
 ```sh
-git push -f -u origin main
+$env:Path += <address>
 ```
 
-## 四.常用命令
+### 网络配置
 
-- 查看当前状态
+1. 显示本机 ip
 
 ```sh
-git status
+ipconfig
 ```
 
-- 查看提交记录
+2. 测试网络链接
 
 ```sh
-git log
+ping <IP>
+```
+
+3. 关闭防火墙
+
+```sh
+netsh advfirewall set allprofiles state off
+```
+
+4. 显示网络统计信息
+
+```sh
+netstat -an
+```
+
+5. 显示本地路由表
+
+```sh
+route print
+```
+
+6. 配置防火墙规则
+
+```sh
+Get-NetFirewallRule
 ```

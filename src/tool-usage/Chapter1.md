@@ -2,10 +2,48 @@
 
 ## 一.开启 powershell
 
-1. `win + R`输入 powershell
+1. `win + R`输入 pwsh
 
 2. 管理员身份运行`ctrl + shift + enter`
 
+## PowerShell 升级和 Windows Terminal 配置
+
+1. 查看 powershell 当前版本
+
+```sh
+$psversiontable
+```
+2. 更新 powershell
+ 
+查询powershell
+```sh
+winget search powershell
+```
+
+3. 下载微软版
+
+```sh
+winget install Microsoft.PowerShell
+```
+
+4. 打开json文件
+![open_powershell_json](./images/powershell.png)
+
+修改为
+```sh
+###
+"defaultProfile": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
+###
+"list": 
+        [
+            {
+                "guid": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
+                "hidden": false,
+                "name": "PowerShell",
+                "source": "Windows.Terminal.PowershellCore"
+            },
+        ]
+```
 ## 二.文件相关命令
 
 1. 进入文件夹

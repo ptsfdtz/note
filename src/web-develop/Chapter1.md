@@ -2,7 +2,7 @@
 
 1. 安装 mdbook
 
-[下载链接](https://github.com/rust-lang/mdBook/releases)
+[mdbook](https://github.com/rust-lang/mdBook/releases)
 
 2. 配置 mdbook 环境
 
@@ -35,3 +35,5 @@ mdbook watch -o
 ```
 
 mdbook 会自动编译项目，无需手动编译
+
+

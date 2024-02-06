@@ -294,12 +294,47 @@ print('Markdown')
 <h2 id="一开启-powershell"><a class="header" href="#一开启-powershell">一.开启 powershell</a></h2>
 <ol>
 <li>
-<p><code>win + R</code>输入 powershell</p>
+<p><code>win + R</code>输入 pwsh</p>
 </li>
 <li>
 <p>管理员身份运行<code>ctrl + shift + enter</code></p>
 </li>
 </ol>
+<h2 id="powershell-升级和-windows-terminal-配置"><a class="header" href="#powershell-升级和-windows-terminal-配置">PowerShell 升级和 Windows Terminal 配置</a></h2>
+<ol>
+<li>查看 powershell 当前版本</li>
+</ol>
+<pre><code class="language-sh">$psversiontable
+</code></pre>
+<ol start="2">
+<li>更新 powershell</li>
+</ol>
+<p>查询powershell</p>
+<pre><code class="language-sh">winget search powershell
+</code></pre>
+<ol start="3">
+<li>下载微软版</li>
+</ol>
+<pre><code class="language-sh">winget install Microsoft.PowerShell
+</code></pre>
+<ol start="4">
+<li>打开json文件
+<img src="tool-usage/./images/powershell.png" alt="open_powershell_json" /></li>
+</ol>
+<p>修改为</p>
+<pre><code class="language-sh">###
+&quot;defaultProfile&quot;: &quot;{574e775e-4f2a-5b96-ac1e-a2962a402336}&quot;,
+###
+&quot;list&quot;: 
+        [
+            {
+                &quot;guid&quot;: &quot;{574e775e-4f2a-5b96-ac1e-a2962a402336}&quot;,
+                &quot;hidden&quot;: false,
+                &quot;name&quot;: &quot;PowerShell&quot;,
+                &quot;source&quot;: &quot;Windows.Terminal.PowershellCore&quot;
+            },
+        ]
+</code></pre>
 <h2 id="二文件相关命令"><a class="header" href="#二文件相关命令">二.文件相关命令</a></h2>
 <ol>
 <li>进入文件夹</li>

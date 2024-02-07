@@ -6,7 +6,8 @@ Markdown是一种可以使用普通文本编辑器编写的标记语言，通过
 
 `vscode`或者`typora`
 
-[typora](https://typora.io/)免费的markdown专用编辑器
+[typora](https://typora.io/)付费的markdown专用编辑器
+
 2. 插件安装
 
 ```sh
@@ -116,3 +117,15 @@ $(document).read(function(){
 ![alt 属性文本](图片地址)
 ![alt 属性文本](图片地址 "可选标题")
 ```
+
+7. 表格
+```markdown
+| 表头   | 表头   |
+| ------ | ------ |
+| 单元格 | 单元格 |
+| 单元格 | 单元格 |
+```
+| 表头   | 表头   |
+| ------ | ------ |
+| 单元格 | 单元格 |
+| 单元格 | 单元格 |

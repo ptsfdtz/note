@@ -1,3 +1,3 @@
 # my note
 
-link:https://github.com/ptsfdtz/note
+link:[note](https://ptsfdtz.github.io/note/)

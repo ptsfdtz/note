@@ -2,16 +2,17 @@
 - [我的笔记](./Intro.md)
   - [学习](./learn-language/Intro.md)
     - [Markdown](./learn-language/Chapter1.md)
-    <!-- - [JavaScript](./learn-language/Chapter2.md) -->
+    - [JavaScript](./learn-language/Chapter2.md)
   - [工具](./tool-usage/Intro.md)
     - [Powershell](./tool-usage/Chapter1.md)
     - [Git](./tool-usage/Chapter2.md)
-    <!-- - [Docker](./tool-usage/Chapter3.md) -->
+    - [Docker](./tool-usage/Chapter3.md)
     - [wireguard](./tool-usage/Chapter4.md)
     - [vim](./tool-usage/Chapter5.md)
   - [搭建](./web-develop/Intro.md)
     - [mdbook](./web-develop/Chapter1.md)
-  <!-- - [树莓派](./Raspberry%20Pi/Intro.md) -->
+    - [react](./web-develop/Chapter2.md)
+  - [树莓派](./Raspberry%20Pi/Intro.md)
     - [linux](./Raspberry%20Pi/Chapter1.md)
     - [vim](./Raspberry%20Pi/Chapter2.md)
     - [Git](./Raspberry%20Pi/Chapter3.md)

@@ -1,4 +1,4 @@
-# wireguard use
+# wireguard
 
 ## 一.安装 wireguard
 

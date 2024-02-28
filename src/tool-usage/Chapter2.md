@@ -1,4 +1,4 @@
-# Git use
+# Git
 
 ## 一.安装 Git
 
@@ -7,9 +7,11 @@
 [git](https://git-scm.com/downloads)
 
 2. 终端下载
+
 ```sh
 winget install --id Git.Git -e --source winget
 ```
+
 ## 二.配置 Git
 
 在 powershell 中输入`git`检测是否配置完成
@@ -103,42 +105,47 @@ git status
 ```sh
 git log
 ```
+
 - 回退到上一个版本
+
 ```sh
-git reset --hard HEAD^     
+git reset --hard HEAD^
 ```
 
 - 回退到上上个版本
+
 ```sh
-git reset --hard HEAD^^   
+git reset --hard HEAD^^
 ```
 
 - 回退到指定版本
+
 ```sh
-git reset --hard HEAD^^   
+git reset --hard HEAD^^
 ```
 
 - 分支相关的操作
+
 ```sh
-git branch ##查看分支     
+git branch ##查看分支
 
-git branch <name> ##创建分支      
+git branch <name> ##创建分支
 
-git checkout <name> ##切换分支        
+git checkout <name> ##切换分支
 
-git checkout -b <name> ##创建+切换分支      
+git checkout -b <name> ##创建+切换分支
 
-git merge <name> ##合并某分支到当前分支     
+git merge <name> ##合并某分支到当前分支
 
-git merge --no-ff -m "..." <name> ##使用普通模式合并分支，可以显示合并历史       
+git merge --no-ff -m "..." <name> ##使用普通模式合并分支，可以显示合并历史
 
-git branch (-m | -M) <oldbranch> <newbranch> ##重命名分支      
+git branch (-m | -M) <oldbranch> <newbranch> ##重命名分支
 
-git branch -d <name> ##删除分支       
+git branch -d <name> ##删除分支
 
 git branch -D <name> ##强行删除未合并分支
 
-git log --graph ##查看分支合并图     
+git log --graph ##查看分支合并图
 
-git log --graph --pretty=oneline --abbrev-commit ##也可以查看分支合并图     
+git log --graph --pretty=oneline --abbrev-commit ##也可以查看分支合并图
 ```

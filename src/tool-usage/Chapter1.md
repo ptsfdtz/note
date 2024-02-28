@@ -13,9 +13,11 @@
 ```sh
 $psversiontable
 ```
+
 2. 更新 powershell
- 
-查询powershell
+
+查询 powershell
+
 ```sh
 winget search powershell
 ```
@@ -26,15 +28,16 @@ winget search powershell
 winget install Microsoft.PowerShell
 ```
 
-4. 打开json文件
-![open_powershell_json](./images/powershell.png)
+4. 打开 json 文件
+   ![open_powershell_json](./images/powershell.png)
 
 修改为
+
 ```sh
 ###
 "defaultProfile": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
 ###
-"list": 
+"list":
         [
             {
                 "guid": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
@@ -44,6 +47,7 @@ winget install Microsoft.PowerShell
             },
         ]
 ```
+
 ## 二.文件相关命令
 
 1. 进入文件夹

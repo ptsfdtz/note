@@ -173,7 +173,7 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="git-use"><a class="header" href="#git-use">Git use</a></h1>
+                        <h1 id="git"><a class="header" href="#git">Git</a></h1>
 <h2 id="一安装-git"><a class="header" href="#一安装-git">一.安装 Git</a></h2>
 <ol>
 <li>官网下载</li>
@@ -261,42 +261,42 @@ git commit -m &quot;First commit&quot;
 <ul>
 <li>回退到上一个版本</li>
 </ul>
-<pre><code class="language-sh">git reset --hard HEAD^     
+<pre><code class="language-sh">git reset --hard HEAD^
 </code></pre>
 <ul>
 <li>回退到上上个版本</li>
 </ul>
-<pre><code class="language-sh">git reset --hard HEAD^^   
+<pre><code class="language-sh">git reset --hard HEAD^^
 </code></pre>
 <ul>
 <li>回退到指定版本</li>
 </ul>
-<pre><code class="language-sh">git reset --hard HEAD^^   
+<pre><code class="language-sh">git reset --hard HEAD^^
 </code></pre>
 <ul>
 <li>分支相关的操作</li>
 </ul>
-<pre><code class="language-sh">git branch ##查看分支     
+<pre><code class="language-sh">git branch ##查看分支
 
-git branch &lt;name&gt; ##创建分支      
+git branch &lt;name&gt; ##创建分支
 
-git checkout &lt;name&gt; ##切换分支        
+git checkout &lt;name&gt; ##切换分支
 
-git checkout -b &lt;name&gt; ##创建+切换分支      
+git checkout -b &lt;name&gt; ##创建+切换分支
 
-git merge &lt;name&gt; ##合并某分支到当前分支     
+git merge &lt;name&gt; ##合并某分支到当前分支
 
-git merge --no-ff -m &quot;...&quot; &lt;name&gt; ##使用普通模式合并分支，可以显示合并历史       
+git merge --no-ff -m &quot;...&quot; &lt;name&gt; ##使用普通模式合并分支，可以显示合并历史
 
-git branch (-m | -M) &lt;oldbranch&gt; &lt;newbranch&gt; ##重命名分支      
+git branch (-m | -M) &lt;oldbranch&gt; &lt;newbranch&gt; ##重命名分支
 
-git branch -d &lt;name&gt; ##删除分支       
+git branch -d &lt;name&gt; ##删除分支
 
 git branch -D &lt;name&gt; ##强行删除未合并分支
 
-git log --graph ##查看分支合并图     
+git log --graph ##查看分支合并图
 
-git log --graph --pretty=oneline --abbrev-commit ##也可以查看分支合并图     
+git log --graph --pretty=oneline --abbrev-commit ##也可以查看分支合并图
 </code></pre>
 
                     </main>

@@ -303,7 +303,8 @@ print('Markdown')
 <tr><td>单元格</td><td>单元格</td></tr>
 <tr><td>单元格</td><td>单元格</td></tr>
 </tbody></table>
-</div><div style="break-before: page; page-break-before: always;"></div><div style="break-before: page; page-break-before: always;"></div><h1 id="tool-use"><a class="header" href="#tool-use">tool use</a></h1>
+</div><div style="break-before: page; page-break-before: always;"></div><h1 id="javascript"><a class="header" href="#javascript">JavaScript</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="tool-use"><a class="header" href="#tool-use">tool use</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="powershell"><a class="header" href="#powershell">Powershell</a></h1>
 <h2 id="一开启-powershell"><a class="header" href="#一开启-powershell">一.开启 powershell</a></h2>
 <ol>
@@ -323,7 +324,7 @@ print('Markdown')
 <ol start="2">
 <li>更新 powershell</li>
 </ol>
-<p>查询powershell</p>
+<p>查询 powershell</p>
 <pre><code class="language-sh">winget search powershell
 </code></pre>
 <ol start="3">
@@ -332,14 +333,14 @@ print('Markdown')
 <pre><code class="language-sh">winget install Microsoft.PowerShell
 </code></pre>
 <ol start="4">
-<li>打开json文件
+<li>打开 json 文件
 <img src="tool-usage/./images/powershell.png" alt="open_powershell_json" /></li>
 </ol>
 <p>修改为</p>
 <pre><code class="language-sh">###
 &quot;defaultProfile&quot;: &quot;{574e775e-4f2a-5b96-ac1e-a2962a402336}&quot;,
 ###
-&quot;list&quot;: 
+&quot;list&quot;:
         [
             {
                 &quot;guid&quot;: &quot;{574e775e-4f2a-5b96-ac1e-a2962a402336}&quot;,
@@ -423,7 +424,7 @@ print('Markdown')
 </ol>
 <pre><code class="language-sh">Get-NetFirewallRule
 </code></pre>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="git-use"><a class="header" href="#git-use">Git use</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="git"><a class="header" href="#git">Git</a></h1>
 <h2 id="一安装-git"><a class="header" href="#一安装-git">一.安装 Git</a></h2>
 <ol>
 <li>官网下载</li>
@@ -511,44 +512,44 @@ git commit -m &quot;First commit&quot;
 <ul>
 <li>回退到上一个版本</li>
 </ul>
-<pre><code class="language-sh">git reset --hard HEAD^     
+<pre><code class="language-sh">git reset --hard HEAD^
 </code></pre>
 <ul>
 <li>回退到上上个版本</li>
 </ul>
-<pre><code class="language-sh">git reset --hard HEAD^^   
+<pre><code class="language-sh">git reset --hard HEAD^^
 </code></pre>
 <ul>
 <li>回退到指定版本</li>
 </ul>
-<pre><code class="language-sh">git reset --hard HEAD^^   
+<pre><code class="language-sh">git reset --hard HEAD^^
 </code></pre>
 <ul>
 <li>分支相关的操作</li>
 </ul>
-<pre><code class="language-sh">git branch ##查看分支     
+<pre><code class="language-sh">git branch ##查看分支
 
-git branch &lt;name&gt; ##创建分支      
+git branch &lt;name&gt; ##创建分支
 
-git checkout &lt;name&gt; ##切换分支        
+git checkout &lt;name&gt; ##切换分支
 
-git checkout -b &lt;name&gt; ##创建+切换分支      
+git checkout -b &lt;name&gt; ##创建+切换分支
 
-git merge &lt;name&gt; ##合并某分支到当前分支     
+git merge &lt;name&gt; ##合并某分支到当前分支
 
-git merge --no-ff -m &quot;...&quot; &lt;name&gt; ##使用普通模式合并分支，可以显示合并历史       
+git merge --no-ff -m &quot;...&quot; &lt;name&gt; ##使用普通模式合并分支，可以显示合并历史
 
-git branch (-m | -M) &lt;oldbranch&gt; &lt;newbranch&gt; ##重命名分支      
+git branch (-m | -M) &lt;oldbranch&gt; &lt;newbranch&gt; ##重命名分支
 
-git branch -d &lt;name&gt; ##删除分支       
+git branch -d &lt;name&gt; ##删除分支
 
 git branch -D &lt;name&gt; ##强行删除未合并分支
 
-git log --graph ##查看分支合并图     
+git log --graph ##查看分支合并图
 
-git log --graph --pretty=oneline --abbrev-commit ##也可以查看分支合并图     
+git log --graph --pretty=oneline --abbrev-commit ##也可以查看分支合并图
 </code></pre>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="docker-use"><a class="header" href="#docker-use">Docker use</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="docker"><a class="header" href="#docker">Docker</a></h1>
 <h2 id="一docker-下载"><a class="header" href="#一docker-下载">一.Docker 下载</a></h2>
 <p><a href="https://docs.docker.com/desktop/install/">docker</a></p>
 <pre><code class="language-sh">https://hub.docker.com/
@@ -565,7 +566,7 @@ git log --graph --pretty=oneline --abbrev-commit ##也可以查看分支合并�
 </ol>
 <pre><code class="language-sh">
 </code></pre>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="wireguard-use"><a class="header" href="#wireguard-use">wireguard use</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="wireguard"><a class="header" href="#wireguard">wireguard</a></h1>
 <h2 id="一安装-wireguard"><a class="header" href="#一安装-wireguard">一.安装 wireguard</a></h2>
 <h3 id="在服务端安装"><a class="header" href="#在服务端安装">在服务端安装</a></h3>
 <ol>
@@ -898,7 +899,7 @@ sudo apt full-upgrade
 <pre><code class="language-sh">reboot
 </code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="vim-1"><a class="header" href="#vim-1">vim</a></h1>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="git"><a class="header" href="#git">git</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="git-1"><a class="header" href="#git-1">git</a></h1>
 <h2 id="下载git"><a class="header" href="#下载git">下载git</a></h2>
 <pre><code class="language-sh">sudo apt update
 sudo apt install git

@@ -86,6 +86,12 @@ mv <SourcePath> <DestinationPath>
 code .
 ```
 
+7. 清空回收站
+
+```sh
+clear-RecycleBin -Force
+```
+
 ## 三. 常用命令
 
 ### 环境变量

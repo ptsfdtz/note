@@ -65,19 +65,19 @@ cd ..
 3. 创建新文件
 
 ```sh
-ni -ItemType Directory -Path <FolderPath>
+mkdir
 ```
 
 4. 删除文件
 
 ```sh
-rm <FilePath>
+rm
 ```
 
 5. 移动文件
 
 ```sh
-mv <SourcePath> <DestinationPath>
+mv
 ```
 
 6. 使用 vscode 打开文件

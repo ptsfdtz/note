@@ -89,7 +89,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="Intro.html"><strong aria-hidden="true">1.</strong> 我的笔记</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="learn-language/Intro.html"><strong aria-hidden="true">1.1.</strong> 学习</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="learn-language/Chapter1.html"><strong aria-hidden="true">1.1.1.</strong> Markdown</a></li><li class="chapter-item expanded "><a href="learn-language/Chapter2.html"><strong aria-hidden="true">1.1.2.</strong> JavaScript</a></li></ol></li><li class="chapter-item expanded "><a href="tool-usage/Intro.html"><strong aria-hidden="true">1.2.</strong> 工具</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="tool-usage/Chapter1.html"><strong aria-hidden="true">1.2.1.</strong> Powershell</a></li><li class="chapter-item expanded "><a href="tool-usage/Chapter2.html"><strong aria-hidden="true">1.2.2.</strong> Git</a></li><li class="chapter-item expanded "><a href="tool-usage/Chapter3.html"><strong aria-hidden="true">1.2.3.</strong> Docker</a></li><li class="chapter-item expanded "><a href="tool-usage/Chapter4.html"><strong aria-hidden="true">1.2.4.</strong> wireguard</a></li><li class="chapter-item expanded "><a href="tool-usage/Chapter5.html"><strong aria-hidden="true">1.2.5.</strong> vim</a></li></ol></li><li class="chapter-item expanded "><a href="web-develop/Intro.html"><strong aria-hidden="true">1.3.</strong> 搭建</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="web-develop/Chapter1.html"><strong aria-hidden="true">1.3.1.</strong> mdbook</a></li><li class="chapter-item expanded "><a href="web-develop/Chapter2.html"><strong aria-hidden="true">1.3.2.</strong> react</a></li></ol></li><li class="chapter-item expanded "><a href="Raspberry Pi/Intro.html"><strong aria-hidden="true">1.4.</strong> 树莓派</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="Raspberry Pi/Chapter1.html"><strong aria-hidden="true">1.4.1.</strong> linux</a></li><li class="chapter-item expanded "><a href="Raspberry Pi/Chapter2.html"><strong aria-hidden="true">1.4.2.</strong> vim</a></li><li class="chapter-item expanded "><a href="Raspberry Pi/Chapter3.html"><strong aria-hidden="true">1.4.3.</strong> Git</a></li></ol></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="Intro.html"><strong aria-hidden="true">1.</strong> 我的笔记</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="learn-language/Intro.html"><strong aria-hidden="true">1.1.</strong> 学习</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="learn-language/Chapter1.html"><strong aria-hidden="true">1.1.1.</strong> Markdown</a></li><li class="chapter-item expanded "><a href="learn-language/Chapter2.html"><strong aria-hidden="true">1.1.2.</strong> JavaScript</a></li></ol></li><li class="chapter-item expanded "><a href="tool-usage/Intro.html"><strong aria-hidden="true">1.2.</strong> 工具</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="tool-usage/Chapter1.html"><strong aria-hidden="true">1.2.1.</strong> Powershell</a></li><li class="chapter-item expanded "><a href="tool-usage/Chapter2.html"><strong aria-hidden="true">1.2.2.</strong> Git</a></li><li class="chapter-item expanded "><a href="tool-usage/Chapter3.html"><strong aria-hidden="true">1.2.3.</strong> Docker</a></li><li class="chapter-item expanded "><a href="tool-usage/Chapter4.html"><strong aria-hidden="true">1.2.4.</strong> wireguard</a></li><li class="chapter-item expanded "><a href="tool-usage/Chapter5.html"><strong aria-hidden="true">1.2.5.</strong> vim</a></li></ol></li><li class="chapter-item expanded "><a href="web-develop/Intro.html"><strong aria-hidden="true">1.3.</strong> 搭建</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="web-develop/Chapter1.html"><strong aria-hidden="true">1.3.1.</strong> mdbook</a></li><li class="chapter-item expanded "><a href="web-develop/Chapter2.html"><strong aria-hidden="true">1.3.2.</strong> react</a></li><li class="chapter-item expanded "><a href="web-develop/Chapter3.html"><strong aria-hidden="true">1.3.3.</strong> qBittorent</a></li></ol></li><li class="chapter-item expanded "><a href="Raspberry Pi/Intro.html"><strong aria-hidden="true">1.4.</strong> 树莓派</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="Raspberry Pi/Chapter1.html"><strong aria-hidden="true">1.4.1.</strong> linux</a></li><li class="chapter-item expanded "><a href="Raspberry Pi/Chapter2.html"><strong aria-hidden="true">1.4.2.</strong> vim</a></li><li class="chapter-item expanded "><a href="Raspberry Pi/Chapter3.html"><strong aria-hidden="true">1.4.3.</strong> Git</a></li></ol></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
@@ -796,6 +796,45 @@ wg-quick down wg0
 <ol start="4">
 <li>项目初始化</li>
 </ol>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="qbittorent"><a class="header" href="#qbittorent">qBittorent</a></h1>
+<h2 id="安装-qbittorent"><a class="header" href="#安装-qbittorent">安装 qBittorent</a></h2>
+<p>Ubuntu 或者 Debian:</p>
+<pre><code class="language-sh">apt install -y qbittorrent-nox
+</code></pre>
+<p>CentOS:</p>
+<pre><code class="language-sh">yum install -y qbittorrent-nox
+</code></pre>
+<h2 id="启动"><a class="header" href="#启动">启动</a></h2>
+<p>安装完成后启动 qBittorrent：</p>
+<pre><code class="language-sh">qbittorrent-nox
+</code></pre>
+<p>访问地址、用户名、密码：</p>
+<pre><code class="language-sh">******** Information ********
+To control qBittorrent, access the Web UI at http://localhost:8080
+The Web UI administrator user name is: admin
+The Web UI administrator password is still the default one: adminadmin
+This is a security risk, please consider changing your password from program preferences
+</code></pre>
+<p>让 qBittorrent 启动后在后台运行可以输入：</p>
+<pre><code class="language-sh">qbittorrent-nox -d
+</code></pre>
+<h2 id="常用命令"><a class="header" href="#常用命令">常用命令</a></h2>
+<p>启动 qBittorrent：</p>
+<pre><code class="language-sh">qbittorrent-nox
+</code></pre>
+<p>在后台启动 qBittorrent：</p>
+<pre><code class="language-sh">qbittorrent-nox -d
+</code></pre>
+<p>查看版本：</p>
+<pre><code class="language-sh">qbittorrent-nox -v
+</code></pre>
+<p>启动 qBittorrent 并指定 Web 面板的端口：</p>
+<pre><code class="language-sh">qbittorrent-nox --webui-port=2333
+</code></pre>
+<p>上面指定 2333 端口。</p>
+<p>查看帮助：</p>
+<pre><code class="language-sh">qbittorrent-nox -h
+</code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="树莓派"><a class="header" href="#树莓派">树莓派</a></h1>
 <ol>
 <li>安装 Raspberry Pi Imager</li>
@@ -817,7 +856,7 @@ wg-quick down wg0
 sudo apt full-upgrade
 </code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="linux"><a class="header" href="#linux">linux</a></h1>
-<h2 id="常用命令"><a class="header" href="#常用命令">常用命令</a></h2>
+<h2 id="常用命令-1"><a class="header" href="#常用命令-1">常用命令</a></h2>
 <ul>
 <li>列出当前目录下文件</li>
 </ul>

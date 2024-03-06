@@ -1,4 +1,5 @@
 # Summary
+
 - [我的笔记](./Intro.md)
   - [学习](./learn-language/Intro.md)
     - [Markdown](./learn-language/Chapter1.md)
@@ -12,6 +13,7 @@
   - [搭建](./web-develop/Intro.md)
     - [mdbook](./web-develop/Chapter1.md)
     - [react](./web-develop/Chapter2.md)
+    - [qBittorent](./web-develop/Chapter3.md)
   - [树莓派](./Raspberry%20Pi/Intro.md)
     - [linux](./Raspberry%20Pi/Chapter1.md)
     - [vim](./Raspberry%20Pi/Chapter2.md)

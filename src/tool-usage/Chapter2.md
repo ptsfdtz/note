@@ -148,4 +148,8 @@ git branch -D <name> ##强行删除未合并分支
 git log --graph ##查看分支合并图
 
 git log --graph --pretty=oneline --abbrev-commit ##也可以查看分支合并图
+
+git tag <num>
+
+git push --tags
 ```

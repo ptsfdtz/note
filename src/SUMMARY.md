@@ -1,9 +1,6 @@
 # Summary
 
 - [我的笔记](./Intro.md)
-  - [语言](./learn-language/Intro.md)
-    - [Markdown](./learn-language/Chapter1.md)
-    - [JavaScript](./learn-language/Chapter2.md)
   - [工具](./tool-usage/Intro.md)
     - [Powershell](./tool-usage/Chapter1.md)
     - [Git](./tool-usage/Chapter2.md)

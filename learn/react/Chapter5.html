@@ -173,7 +173,72 @@
 
                 <div id="content" class="content">
                     <main>
-                        
+                        <h1 id="条件渲染和列表循环"><a class="header" href="#条件渲染和列表循环">条件渲染和列表循环</a></h1>
+<p>React没有指令，一切操作的本质都是通过计算生成不同的内容，拿去渲染，得到不同的页面。</p>
+<h2 id="条件渲染的本质"><a class="header" href="#条件渲染的本质">条件渲染的本质</a></h2>
+<p><strong>原则：</strong></p>
+<ol>
+<li>react渲染undefined,null,false,空字符串不会渲染成任何内容。</li>
+<li>如果渲染一个jsx编写的html元素，就会渲染成页面上的内容。</li>
+</ol>
+<p><img src="./images/%E6%9D%A1%E4%BB%B6%E6%B8%B2%E6%9F%93%E7%9A%84%E6%9C%AC%E8%B4%A8.png" alt="条件渲染的本质" /></p>
+<pre><code class="language-jsx">class App extends React.Component {
+  state = {
+    show: true
+  }
+  f1() {
+    if (this.state.show) {
+      return &lt;div&gt;Hello World&lt;/div&gt;
+    } else {
+      return null
+    }
+  }
+  render() {
+    return &lt;div className=&quot;App&quot;&gt;
+      {this.f1()}
+      &lt;button onClick={() =&gt; {
+        this.setState({
+          show: !this.state.show
+        }
+        )
+      }}&gt;{this.state.show ? 'Hide' : 'Show'}&lt;/button&gt;
+    &lt;/div&gt;
+  }
+}
+</code></pre>
+<h2 id="列表循环的本质"><a class="header" href="#列表循环的本质">列表循环的本质</a></h2>
+<p><strong>原则</strong></p>
+<ol>
+<li>
+<p>渲染一个数组会把数组里的每一项单独取出渲染</p>
+</li>
+<li>
+<p>那么我们编写一个里面存放的都是html结构的数组，就会渲染成列表。</p>
+</li>
+</ol>
+<pre><code class="language-jsx">class App extends React.PureComponent {
+  state = {
+    originArr: [1, 2, 3, 4, 5]
+  }
+
+  addData = () =&gt; {
+    let _arr = [...this.state.originArr]
+    _arr.push(Math.random() * 10);
+    this.setState({
+      originArr: _arr
+    })
+  }
+
+  render() {
+    return &lt;div className=&quot;App&quot;&gt;
+      &lt;div&gt;列表渲染&lt;/div&gt;
+      {this.state.originArr.map((item) =&gt; { return &lt;div key={item}&gt;{item}&lt;/div&gt; })}
+      &lt;button onClick={this.addData}&gt;addData&lt;/button&gt;
+    &lt;/div&gt;
+  }
+}
+</code></pre>
+
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">

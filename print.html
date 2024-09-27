@@ -949,8 +949,357 @@ export default App;
 <tr><td>布尔值，null，undefined</td><td>不渲染任何内容</td></tr>
 </tbody></table>
 </div><div style="break-before: page; page-break-before: always;"></div><h1 id="事件绑定"><a class="header" href="#事件绑定">事件绑定</a></h1>
+<p>React 组件的事件绑定与 DOM 元素的事件绑定有些不同。</p>
+<p>在 React 中，事件绑定是通过 JSX 语法来实现的。</p>
+<pre><code class="language-jsx">import './App.css';
+import React from 'react';
+
+class App extends React.Component {
+  render() {
+    return &lt;div className=&quot;App&quot; &gt;
+      &lt;div onClick={() =&gt; {
+        console.log(&quot;clicked&quot;);
+      }}&gt;button&lt;/div&gt;
+    &lt;/div&gt;;
+  }
+}
+
+export default App;
+</code></pre>
+<p>在 JSX 中，事件绑定通过 <code>on</code> 开头的属性来实现。</p>
+<p>如上例，<code>onClick</code> 事件绑定到 <code>&lt;div&gt;</code> 元素上，当该元素被点击时，会执行 <code>console.log(&quot;clicked&quot;)</code> 方法。</p>
+<h2 id="this-绑定"><a class="header" href="#this-绑定">this 绑定</a></h2>
+<p>改变this指向的方法:</p>
+<ol>
+<li>给方法调用bind规定this指向</li>
+<li>使用一个匿名箭头函数</li>
+<li>方法本身写为箭头函数</li>
+</ol>
+<p>通过箭头函数来绑定事件时，<code>this</code> 关键字会指向组件实例，而不是 DOM 元素。</p>
+<pre><code class="language-jsx">import './App.css';
+import React from 'react';
+
+class App extends React.Component {
+  f1() {
+    console.log(this);
+  }
+  render() {
+    return &lt;div className=&quot;App&quot; &gt;
+      &lt;div onClick={() =&gt; {
+        console.log(this);
+      }}&gt;button&lt;/div&gt;
+    &lt;/div&gt;;
+  }
+}
+
+export default App;
+</code></pre>
+<h2 id="事件绑定其他操作"><a class="header" href="#事件绑定其他操作">事件绑定其他操作</a></h2>
+<ol>
+<li>传递参数</li>
+<li>阻止默认行为</li>
+</ol>
+<pre><code class="language-jsx">class App extends React.Component {
+  f1 = (a, b) =&gt; {
+    console.log(a + b);
+  }
+  render() {
+    return &lt;div className=&quot;App&quot; &gt;
+      &lt;div onClick={this.f1.bind(this, 1, 2)}&gt;button&lt;/div&gt;
+    &lt;/div&gt;;
+  }
+}
+</code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="响应式数据"><a class="header" href="#响应式数据">响应式数据</a></h1>
-<div style="break-before: page; page-break-before: always;"></div><div style="break-before: page; page-break-before: always;"></div><div style="break-before: page; page-break-before: always;"></div><div style="break-before: page; page-break-before: always;"></div><div style="break-before: page; page-break-before: always;"></div><div style="break-before: page; page-break-before: always;"></div><div style="break-before: page; page-break-before: always;"></div><div style="break-before: page; page-break-before: always;"></div><div style="break-before: page; page-break-before: always;"></div><div style="break-before: page; page-break-before: always;"></div><div style="break-before: page; page-break-before: always;"></div><div style="break-before: page; page-break-before: always;"></div><div style="break-before: page; page-break-before: always;"></div>
+<p>jsx 语法中，可以直接绑定数据，这样当数据发生变化时，组件会自动重新渲染。</p>
+<pre><code class="language-jsx">class App extends React.Component {
+  state = {
+    a: 1,
+  }
+  render() {
+    return &lt;div className=&quot;App&quot;&gt;
+      {this.state.a}
+    &lt;/div&gt;
+  }
+}
+</code></pre>
+<p>这样，当 <code>this.state.a</code> 发生变化时，组件会自动重新渲染。</p>
+<p>但是，如果 <code>this.state.a</code> 是一个对象，那么当对象中的某个属性发生变化时，组件不会自动重新渲染。</p>
+<p>我们需要使用 <code>setState</code> 方法来更新状态，并且传入一个函数作为参数，函数接收当前状态作为参数，返回新的状态。</p>
+<pre><code class="language-jsx">class App extends React.Component {
+  state = {
+    a: 1,
+  }
+
+  addA = () =&gt; {
+    this.setState({
+      a: this.state.a + 1
+    })
+  }
+
+  render() {
+    return &lt;div className=&quot;App&quot;&gt;
+      {this.state.a}
+      &lt;button onClick={this.addA}&gt;Add A&lt;/button&gt;
+    &lt;/div&gt;
+  }
+}
+</code></pre>
+<p>这样，当 <code>this.state.a</code> 发生变化时，组件会自动重新渲染。</p>
+<p><img src="learn/react/./images/setStade%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B%E5%9B%BE%E8%A7%A3.png" alt="setState流程图解" /></p>
+<p>调用setState方法才会触发更新，修改state不会触发刷新。</p>
+<p>setState方法是异步的，要获取修改后的值，需要通过回调函数。</p>
+<pre><code class="language-jsx">this.setState({
+  a: this.state.a + 1
+}, () =&gt; {
+  console.log(this.state.a)//这样，在setState方法执行完毕后，才会执行回调函数，并获取修改后的值。
+})
+</code></pre>
+<h2 id="purecomponent"><a class="header" href="#purecomponent">PureComponent</a></h2>
+<p>PureComponent 是一个高阶组件，它会对 props 和 state 进行浅比较，只有当 props 和 state 发生变化时才会重新渲染。</p>
+<pre><code class="language-jsx">class App extends PureComponent {
+  state = {
+    a: 1,
+  }
+
+  addA = () =&gt; {
+    this.setState({
+      a: this.state.a + 1
+    })
+  }
+
+  render() {
+    return &lt;div className=&quot;App&quot;&gt;
+      {this.state.a}
+      &lt;button onClick={this.addA}&gt;Add A&lt;/button&gt;
+    &lt;/div&gt;
+  }
+}
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="条件渲染和列表循环"><a class="header" href="#条件渲染和列表循环">条件渲染和列表循环</a></h1>
+<p>React没有指令，一切操作的本质都是通过计算生成不同的内容，拿去渲染，得到不同的页面。</p>
+<h2 id="条件渲染的本质"><a class="header" href="#条件渲染的本质">条件渲染的本质</a></h2>
+<p><strong>原则：</strong></p>
+<ol>
+<li>react渲染undefined,null,false,空字符串不会渲染成任何内容。</li>
+<li>如果渲染一个jsx编写的html元素，就会渲染成页面上的内容。</li>
+</ol>
+<p><img src="learn/react/./images/%E6%9D%A1%E4%BB%B6%E6%B8%B2%E6%9F%93%E7%9A%84%E6%9C%AC%E8%B4%A8.png" alt="条件渲染的本质" /></p>
+<pre><code class="language-jsx">class App extends React.Component {
+  state = {
+    show: true
+  }
+  f1() {
+    if (this.state.show) {
+      return &lt;div&gt;Hello World&lt;/div&gt;
+    } else {
+      return null
+    }
+  }
+  render() {
+    return &lt;div className=&quot;App&quot;&gt;
+      {this.f1()}
+      &lt;button onClick={() =&gt; {
+        this.setState({
+          show: !this.state.show
+        }
+        )
+      }}&gt;{this.state.show ? 'Hide' : 'Show'}&lt;/button&gt;
+    &lt;/div&gt;
+  }
+}
+</code></pre>
+<h2 id="列表循环的本质"><a class="header" href="#列表循环的本质">列表循环的本质</a></h2>
+<p><strong>原则</strong></p>
+<ol>
+<li>
+<p>渲染一个数组会把数组里的每一项单独取出渲染</p>
+</li>
+<li>
+<p>那么我们编写一个里面存放的都是html结构的数组，就会渲染成列表。</p>
+</li>
+</ol>
+<pre><code class="language-jsx">class App extends React.PureComponent {
+  state = {
+    originArr: [1, 2, 3, 4, 5]
+  }
+
+  addData = () =&gt; {
+    let _arr = [...this.state.originArr]
+    _arr.push(Math.random() * 10);
+    this.setState({
+      originArr: _arr
+    })
+  }
+
+  render() {
+    return &lt;div className=&quot;App&quot;&gt;
+      &lt;div&gt;列表渲染&lt;/div&gt;
+      {this.state.originArr.map((item) =&gt; { return &lt;div key={item}&gt;{item}&lt;/div&gt; })}
+      &lt;button onClick={this.addData}&gt;addData&lt;/button&gt;
+    &lt;/div&gt;
+  }
+}
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="表单绑定"><a class="header" href="#表单绑定">表单绑定</a></h1>
+<p>React 中很多思路都是按原生的操作去做的，表单绑定也是一样的。</p>
+<p>原生表单获取表单输入值，我们可以通过监听input，change等事件，然后获取e.target.value</p>
+<p>如果想要设置表单的值，通常设置value属性即可，如果是选择框则是checked属性。</p>
+<p><strong>输入框绑定</strong></p>
+<pre><code class="language-jsx">class App extends React.PureComponent {
+  state = {
+    inputValue: ''
+  }
+
+  render() {
+    return &lt;div className=&quot;App&quot;&gt;
+      {this.state.inputValue}
+      &lt;input value={this.state.inputValue} onInput={(e) =&gt; {
+        this.setState({ inputValue: e.target.value });
+      }} /&gt;
+    &lt;/div&gt;
+  }
+}
+</code></pre>
+<p><strong>选择框绑定</strong></p>
+<pre><code class="language-jsx">class App extends React.PureComponent {
+  state = {
+    checkedArr: [&quot;first&quot;]
+  }
+
+  handleCheck = (e) =&gt; {
+    let arr = [...this.state.checkedArr]
+    if (e.target.checked) {
+      arr.push(e.target.value)
+    } else {
+      arr.splice(arr.indexOf(e.target.value), 1)
+    }
+    this.setState({ checkedArr: arr })
+  }
+
+  render() {
+    return &lt;div className=&quot;App&quot;&gt;
+      {this.state.checkedArr}
+      &lt;input checked={this.state.checkedArr.indexOf(&quot;first&quot;) !== -1} onChange={this.handleCheck} value=&quot;first&quot; type=&quot;checkbox&quot; name=&quot;choose&quot; /&gt;选项1
+      &lt;input checked={this.state.checkedArr.indexOf(&quot;second&quot;) !== -1} onChange={this.handleCheck} value=&quot;second&quot; type=&quot;checkbox&quot; name=&quot;choose&quot; /&gt;选项2
+      &lt;input checked={this.state.checkedArr.indexOf(&quot;third&quot;) !== -1} onChange={this.handleCheck} value=&quot;thrid&quot; type=&quot;checkbox&quot; name=&quot;choose&quot; /&gt;选项3
+    &lt;/div&gt;
+  }
+}
+</code></pre>
+<p>其他原生表单元素的绑定，比如textarea，radio，select等，都是类似的。</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="props-和组件间传值插槽"><a class="header" href="#props-和组件间传值插槽">Props 和组件间传值，插槽</a></h1>
+<p><strong>props 是 react组件的核心</strong></p>
+<p>在react中，一切写在组件上的属性和子节点都被视为规划为了props。</p>
+<p>所以props是很多react功能的根本。父子component之间的通信，状态管理，以及组件的复用都离不开props。</p>
+<pre><code class="language-jsx">class App extends React.PureComponent {
+  state = {
+    mes: &quot;hello son&quot;
+  }
+  render() {
+    return &lt;div className=&quot;App&quot;&gt;
+      i am App
+      &lt;Son mes={this.state.mes}&gt;
+        &lt;div&gt;
+          i am son
+        &lt;/div&gt;
+      &lt;/Son&gt;
+    &lt;/div&gt;
+  }
+}
+</code></pre>
+<pre><code class="language-jsx">class Son extends React.Component {
+    state = {
+        sonMes: 'Hello'
+    }
+    render() {
+        console.log(this.props);
+        return &lt;div&gt;
+            {this.props.mes}
+            {this.state.sonMes}
+            i am son of App
+        &lt;/div&gt;
+    }
+}
+</code></pre>
+<p><strong>props的类型验证和默认值</strong></p>
+<pre><code class="language-jsx">Son.propsType = {
+    mes: function (props) {
+        if (typeof props.mes !== 'string') {
+            throw new Error('mes must be a string');
+        }
+    }
+}
+
+Son.defaultProps = {
+    mes: 'default message',
+}
+</code></pre>
+<p>React.PropTypes 已经被废弃，建议使用 PropTypes 来代替。</p>
+<pre><code class="language-jsx">Son.propsType = {
+    mes: PropTypes.string.isRequired,
+}
+</code></pre>
+<h2 id="插槽"><a class="header" href="#插槽">插槽</a></h2>
+<p>插槽的本质就是子组建的html内容需要父组件传入，在jsx的加持下，我可以把html想普通的字符串，数字一样传递，所以插槽只需要直接作为props传入就行</p>
+<p><img src="learn/react/./images/%E6%8F%92%E6%A7%BD%E7%9A%84%E6%9C%AC%E8%B4%A8.png" alt="插槽的本质" /></p>
+<pre><code class="language-jsx">  render() {
+    return &lt;div className=&quot;App&quot;&gt;
+      &lt;Son a={&lt;div&gt;i am a&lt;/div&gt;} scopeslot={(scope) =&gt; { return &lt;div&gt;{scope}&lt;/div&gt; }} mes={this.state.mes}&gt;
+        &lt;div&gt;i am slot&lt;/div&gt;
+      &lt;/Son&gt;
+    &lt;/div&gt;
+  }
+</code></pre>
+<pre><code class="language-jsx">class Son extends React.Component {
+    state = {
+        sonMes: 'Hello'
+    }
+    render() {
+        return &lt;div&gt;
+            {this.props.a}
+            {this.props.mes}
+            {this.state.sonMes}
+            {this.props.children}
+            {this.props.scopeslot(this.state.sonMes)}
+        &lt;/div&gt;
+    }
+}
+</code></pre>
+<p>插槽可以做到父子组件之间传递信息，并且可以自定义html内容，可以让父组件更加灵活的控制子组件的显示。</p>
+<p><img src="learn/react/./images/%E5%AD%90%E5%BE%80%E7%88%B6%E4%BC%A0%E5%80%BC.png" alt="子往父传值" /></p>
+<pre><code class="language-jsx">class App extends React.PureComponent {
+  state = {
+    mes: &quot;i am App&quot;
+  }
+  changeMes(sonmes) {
+    this.setState({
+      mes: sonmes
+    })
+  }
+  render() {
+    return &lt;div className=&quot;App&quot;&gt;
+      &lt;Son mes={this.state.mes} changeMes={this.changeMes.bind(this)}&gt; &lt;/Son&gt;
+    &lt;/div&gt;
+  }
+}
+</code></pre>
+<pre><code class="language-jsx">class Son extends React.Component {
+    state = {
+        sonMes: 'Hello'
+    }
+    render() {
+        return &lt;div&gt;
+            {this.props.mes}
+            &lt;button onClick={() =&gt; {
+                this.props.changeMes(this.state.sonMes);
+            }}&gt;Change&lt;/button&gt;
+        &lt;/div&gt;
+    }
+}
+</code></pre>
+<p>父组件通过changeMes方法改变子组件的状态，子组件通过props.changeMes方法改变父组件的状态。</p>
+<div style="break-before: page; page-break-before: always;"></div><div style="break-before: page; page-break-before: always;"></div><div style="break-before: page; page-break-before: always;"></div><div style="break-before: page; page-break-before: always;"></div><div style="break-before: page; page-break-before: always;"></div><div style="break-before: page; page-break-before: always;"></div><div style="break-before: page; page-break-before: always;"></div><div style="break-before: page; page-break-before: always;"></div><div style="break-before: page; page-break-before: always;"></div><div style="break-before: page; page-break-before: always;"></div>
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">

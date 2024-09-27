@@ -173,7 +173,54 @@
 
                 <div id="content" class="content">
                     <main>
-                        
+                        <h1 id="表单绑定"><a class="header" href="#表单绑定">表单绑定</a></h1>
+<p>React 中很多思路都是按原生的操作去做的，表单绑定也是一样的。</p>
+<p>原生表单获取表单输入值，我们可以通过监听input，change等事件，然后获取e.target.value</p>
+<p>如果想要设置表单的值，通常设置value属性即可，如果是选择框则是checked属性。</p>
+<p><strong>输入框绑定</strong></p>
+<pre><code class="language-jsx">class App extends React.PureComponent {
+  state = {
+    inputValue: ''
+  }
+
+  render() {
+    return &lt;div className=&quot;App&quot;&gt;
+      {this.state.inputValue}
+      &lt;input value={this.state.inputValue} onInput={(e) =&gt; {
+        this.setState({ inputValue: e.target.value });
+      }} /&gt;
+    &lt;/div&gt;
+  }
+}
+</code></pre>
+<p><strong>选择框绑定</strong></p>
+<pre><code class="language-jsx">class App extends React.PureComponent {
+  state = {
+    checkedArr: [&quot;first&quot;]
+  }
+
+  handleCheck = (e) =&gt; {
+    let arr = [...this.state.checkedArr]
+    if (e.target.checked) {
+      arr.push(e.target.value)
+    } else {
+      arr.splice(arr.indexOf(e.target.value), 1)
+    }
+    this.setState({ checkedArr: arr })
+  }
+
+  render() {
+    return &lt;div className=&quot;App&quot;&gt;
+      {this.state.checkedArr}
+      &lt;input checked={this.state.checkedArr.indexOf(&quot;first&quot;) !== -1} onChange={this.handleCheck} value=&quot;first&quot; type=&quot;checkbox&quot; name=&quot;choose&quot; /&gt;选项1
+      &lt;input checked={this.state.checkedArr.indexOf(&quot;second&quot;) !== -1} onChange={this.handleCheck} value=&quot;second&quot; type=&quot;checkbox&quot; name=&quot;choose&quot; /&gt;选项2
+      &lt;input checked={this.state.checkedArr.indexOf(&quot;third&quot;) !== -1} onChange={this.handleCheck} value=&quot;thrid&quot; type=&quot;checkbox&quot; name=&quot;choose&quot; /&gt;选项3
+    &lt;/div&gt;
+  }
+}
+</code></pre>
+<p>其他原生表单元素的绑定，比如textarea，radio，select等，都是类似的。</p>
+
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">

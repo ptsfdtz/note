@@ -173,7 +173,118 @@
 
                 <div id="content" class="content">
                     <main>
-                        
+                        <h1 id="props-和组件间传值插槽"><a class="header" href="#props-和组件间传值插槽">Props 和组件间传值，插槽</a></h1>
+<p><strong>props 是 react组件的核心</strong></p>
+<p>在react中，一切写在组件上的属性和子节点都被视为规划为了props。</p>
+<p>所以props是很多react功能的根本。父子component之间的通信，状态管理，以及组件的复用都离不开props。</p>
+<pre><code class="language-jsx">class App extends React.PureComponent {
+  state = {
+    mes: &quot;hello son&quot;
+  }
+  render() {
+    return &lt;div className=&quot;App&quot;&gt;
+      i am App
+      &lt;Son mes={this.state.mes}&gt;
+        &lt;div&gt;
+          i am son
+        &lt;/div&gt;
+      &lt;/Son&gt;
+    &lt;/div&gt;
+  }
+}
+</code></pre>
+<pre><code class="language-jsx">class Son extends React.Component {
+    state = {
+        sonMes: 'Hello'
+    }
+    render() {
+        console.log(this.props);
+        return &lt;div&gt;
+            {this.props.mes}
+            {this.state.sonMes}
+            i am son of App
+        &lt;/div&gt;
+    }
+}
+</code></pre>
+<p><strong>props的类型验证和默认值</strong></p>
+<pre><code class="language-jsx">Son.propsType = {
+    mes: function (props) {
+        if (typeof props.mes !== 'string') {
+            throw new Error('mes must be a string');
+        }
+    }
+}
+
+Son.defaultProps = {
+    mes: 'default message',
+}
+</code></pre>
+<p>React.PropTypes 已经被废弃，建议使用 PropTypes 来代替。</p>
+<pre><code class="language-jsx">Son.propsType = {
+    mes: PropTypes.string.isRequired,
+}
+</code></pre>
+<h2 id="插槽"><a class="header" href="#插槽">插槽</a></h2>
+<p>插槽的本质就是子组建的html内容需要父组件传入，在jsx的加持下，我可以把html想普通的字符串，数字一样传递，所以插槽只需要直接作为props传入就行</p>
+<p><img src="./images/%E6%8F%92%E6%A7%BD%E7%9A%84%E6%9C%AC%E8%B4%A8.png" alt="插槽的本质" /></p>
+<pre><code class="language-jsx">  render() {
+    return &lt;div className=&quot;App&quot;&gt;
+      &lt;Son a={&lt;div&gt;i am a&lt;/div&gt;} scopeslot={(scope) =&gt; { return &lt;div&gt;{scope}&lt;/div&gt; }} mes={this.state.mes}&gt;
+        &lt;div&gt;i am slot&lt;/div&gt;
+      &lt;/Son&gt;
+    &lt;/div&gt;
+  }
+</code></pre>
+<pre><code class="language-jsx">class Son extends React.Component {
+    state = {
+        sonMes: 'Hello'
+    }
+    render() {
+        return &lt;div&gt;
+            {this.props.a}
+            {this.props.mes}
+            {this.state.sonMes}
+            {this.props.children}
+            {this.props.scopeslot(this.state.sonMes)}
+        &lt;/div&gt;
+    }
+}
+</code></pre>
+<p>插槽可以做到父子组件之间传递信息，并且可以自定义html内容，可以让父组件更加灵活的控制子组件的显示。</p>
+<p><img src="./images/%E5%AD%90%E5%BE%80%E7%88%B6%E4%BC%A0%E5%80%BC.png" alt="子往父传值" /></p>
+<pre><code class="language-jsx">class App extends React.PureComponent {
+  state = {
+    mes: &quot;i am App&quot;
+  }
+  changeMes(sonmes) {
+    this.setState({
+      mes: sonmes
+    })
+  }
+  render() {
+    return &lt;div className=&quot;App&quot;&gt;
+      &lt;Son mes={this.state.mes} changeMes={this.changeMes.bind(this)}&gt; &lt;/Son&gt;
+    &lt;/div&gt;
+  }
+}
+</code></pre>
+<pre><code class="language-jsx">class Son extends React.Component {
+    state = {
+        sonMes: 'Hello'
+    }
+    render() {
+        return &lt;div&gt;
+            {this.props.mes}
+            &lt;button onClick={() =&gt; {
+                this.props.changeMes(this.state.sonMes);
+            }}&gt;Change&lt;/button&gt;
+        &lt;/div&gt;
+    }
+}
+</code></pre>
+<p>父组件通过changeMes方法改变子组件的状态，子组件通过props.changeMes方法改变父组件的状态。</p>
+
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">

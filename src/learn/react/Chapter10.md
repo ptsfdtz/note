@@ -2,8 +2,8 @@
 
 **ref：**用于获取真实dom
 
-1. ref必须在挂载后才能获取，通常在componentDidMount中获取
-2. ref获取组件，不能获取函数组件
+**1. ref必须在挂载后才能获取，通常在componentDidMount中获取**
+**2. ref获取组件，不能获取函数组件**
 
 ```jsx
 import './App.css';
@@ -52,10 +52,12 @@ class Son extends React.Component {
 export default Son; 
 ```
 
-**context：**用于嵌套很深的爷孙组件之间context共享数据
+**context：** 用于嵌套很深的爷孙组件之间context共享数据
 
-1. 子组件使用父组件创建的context对象，不能自己创建
-App.jsx
+**1. 子组件使用父组件创建的context对象，不能自己创建**
+
+**App.jsx**
+
 ```jsx
 import './App.css';
 import React from 'react';
@@ -81,7 +83,9 @@ class App extends React.PureComponent {
 
 export default App;   
 ```
-GrandSon.jsx
+
+**GrandSon.jsx**
+
 ```jsx
 import React from 'react';
 import { Context1 } from './App';

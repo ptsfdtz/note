@@ -2,7 +2,8 @@
 
 **逻辑复用：** 如果是UI内推和操作的复用我们会使用组件，但是如果是逻辑复用，比如一个组件需要实现多个功能，我们就需要使用高阶组件。
 
-`TestHoc.js`
+**TestHoc.js**
+
 ```jsx
 import React from 'react';
 export default function TectHoc(UserCom) {
@@ -31,7 +32,9 @@ export default function TectHoc(UserCom) {
     }
 }
 ```
-Son.js
+
+**Son.js**
+
 ```jsx
 function Son(props) {
     return <div>X: {props.x} Y: {props.y}</div>

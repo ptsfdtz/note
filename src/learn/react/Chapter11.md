@@ -8,7 +8,7 @@
 4. 函数组件本身的函数体相当于render函数
 5. props在函数的第一个参数接受
 
-相当于render函数，return 的内容相当于组件的html
+**相当于render函数，return 的内容相当于组件的html**
 
 ## 一.state的创建和更新
 
@@ -111,7 +111,7 @@ function Son() {
 }
 export default Son;
 ```
-函数组件中传递context数据，需要用到`useContext`
+**函数组件中传递context数据，需要用到`useContext`**
 
 ## 总结
 

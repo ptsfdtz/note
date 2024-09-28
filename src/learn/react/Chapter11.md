@@ -99,7 +99,7 @@ let changemsg = useCallback(() => { setMsg("hello world") }, [msg]);
 
 **useRef:** 获取dom节点,函数组件中使用ref
 
-**useContext:**更方便的解析context的provider的数据
+**useContext:** 更方便的解析context的provider的数据
 
 ```jsx
 import { useContext } from "react";

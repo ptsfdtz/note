@@ -174,12 +174,10 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="生命周期"><a class="header" href="#生命周期">生命周期</a></h1>
-<p>react组件的生命周期可以分为三个阶段：</p>
-<ol>
-<li>挂载阶段：组件被创建并插入到DOM中，此时组件的状态是未知的，组件的属性和状态都可以被设置。</li>
-<li>更新阶段：组件的状态发生变化，组件需要重新渲染，此时组件的属性和状态都可以被更新。</li>
-<li>卸载阶段：组件从DOM中移除，此时组件的状态也会被销毁。</li>
-</ol>
+<p><strong>react组件的生命周期可以分为三个阶段：</strong></p>
+<p><strong>1. 挂载阶段：</strong> 组件被创建并插入到DOM中，此时组件的状态是未知的，组件的属性和状态都可以被设置。
+<strong>2. 更新阶段：</strong> 组件的状态发生变化，组件需要重新渲染，此时组件的属性和状态都可以被更新。
+<strong>3. 卸载阶段：</strong> 组件从DOM中移除，此时组件的状态也会被销毁。</p>
 <p><img src="./images/react%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F.png" alt="rect-lifecycle" /></p>
 <pre><code class="language-js">constructor(props)
 </code></pre>
@@ -187,7 +185,7 @@
 <pre><code class="language-js">render()
 </code></pre>
 <p>一个很重要的生命周期，它返回一个React元素，描述了组件在屏幕上应该呈现的内容。</p>
-<p>传入props,setState(),forceUpdate()等方法可以触发更新。</p>
+<p>传入<code>props,setState()</code>,<code>forceUpdate()</code>等方法可以触发更新。</p>
 <pre><code class="language-js">shouldComponentUpdate()
 </code></pre>
 <p>一个函数，在组件接收到新的props或state时，会调用这个函数，用来判断是否需要更新组件。通常在render之前</p>

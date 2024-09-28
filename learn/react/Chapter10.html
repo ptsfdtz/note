@@ -175,10 +175,8 @@
                     <main>
                         <h1 id="-ref-和-context"><a class="header" href="#-ref-和-context">-ref 和 context</a></h1>
 <p>**ref：**用于获取真实dom</p>
-<ol>
-<li>ref必须在挂载后才能获取，通常在componentDidMount中获取</li>
-<li>ref获取组件，不能获取函数组件</li>
-</ol>
+<p><strong>1. ref必须在挂载后才能获取，通常在componentDidMount中获取</strong>
+<strong>2. ref获取组件，不能获取函数组件</strong></p>
 <pre><code class="language-jsx">import './App.css';
 import React from 'react';
 import Son from './Son.js';
@@ -222,11 +220,9 @@ class Son extends React.Component {
 }
 export default Son; 
 </code></pre>
-<p>**context：**用于嵌套很深的爷孙组件之间context共享数据</p>
-<ol>
-<li>子组件使用父组件创建的context对象，不能自己创建
-App.jsx</li>
-</ol>
+<p><strong>context：</strong> 用于嵌套很深的爷孙组件之间context共享数据</p>
+<p><strong>1. 子组件使用父组件创建的context对象，不能自己创建</strong></p>
+<p><strong>App.jsx</strong></p>
 <pre><code class="language-jsx">import './App.css';
 import React from 'react';
 import Son from './Son.js';
@@ -251,7 +247,7 @@ class App extends React.PureComponent {
 
 export default App;   
 </code></pre>
-<p>GrandSon.jsx</p>
+<p><strong>GrandSon.jsx</strong></p>
 <pre><code class="language-jsx">import React from 'react';
 import { Context1 } from './App';
 class GrandSon extends React.Component {

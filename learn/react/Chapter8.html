@@ -192,9 +192,7 @@
           }}&gt;father
 &lt;/div&gt;
 </code></pre>
-<ol>
-<li>如何做到组件专用CSS</li>
-</ol>
+<p><strong>1. 如何做到组件专用CSS</strong></p>
 <p>新建一个<code>.module.css</code>文件，然后在组件里导入，然后在style里用className来引用。</p>
 <pre><code class="language-jsx">import React from 'react';
 import sonStyle from './Son.module.css';
@@ -219,9 +217,7 @@ export default Son;
     color: blue
 }
 </code></pre>
-<ol start="2">
-<li>如何更舒服的控制类名的添加和减少</li>
-</ol>
+<p><strong>2. 如何更舒服的控制类名的添加和减少</strong></p>
 <p>普通的方式，不借助第三方库</p>
 <pre><code class="language-jsx">class Son extends React.Component {
     state = {

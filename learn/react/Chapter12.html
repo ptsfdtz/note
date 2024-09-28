@@ -175,7 +175,7 @@
                     <main>
                         <h1 id="高阶组件"><a class="header" href="#高阶组件">高阶组件</a></h1>
 <p><strong>逻辑复用：</strong> 如果是UI内推和操作的复用我们会使用组件，但是如果是逻辑复用，比如一个组件需要实现多个功能，我们就需要使用高阶组件。</p>
-<p><code>TestHoc.js</code></p>
+<p><strong>TestHoc.js</strong></p>
 <pre><code class="language-jsx">import React from 'react';
 export default function TectHoc(UserCom) {
     return class extends React.Component {
@@ -203,7 +203,7 @@ export default function TectHoc(UserCom) {
     }
 }
 </code></pre>
-<p>Son.js</p>
+<p><strong>Son.js</strong></p>
 <pre><code class="language-jsx">function Son(props) {
     return &lt;div&gt;X: {props.x} Y: {props.y}&lt;/div&gt;
 }

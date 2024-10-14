@@ -8,7 +8,6 @@
     - [wireguard](./tool-usage/Chapter4.md)
     - [vim](./tool-usage/Chapter5.md)
     - [qBittorent](./tool-usage/Chapter6.md)
-    - [nano](./tool-usage/Chapter7.md)
   - [搭建](./web-develop/Intro.md)
     - [mdbook](./web-develop/Chapter1.md)
     - [react](./web-develop/Chapter2.md)
@@ -33,9 +32,6 @@
       - [高阶组件](./learn/react/Chapter12.md)
       - [性能问题和优化](./learn/react/Chapter13.md)
       - [-router的使用](./learn/react/Chapter14.md)
-        <!--     - [全局状态管理](./learn/react/Chapter15.md)
-      - [路由权限控制](./learn/react/Chapter16.md)
-      - [组件库等相关生态](./learn/react/Chapter17.md) -->
   
     - [vue](./learn/vue/Intro.md)
       - [组件](./learn/vue/Chapter1.md)

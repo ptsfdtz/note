@@ -1,73 +1,46 @@
-# qBittorent
+# Oh my posh
 
-## 安装 qBittorent
+### 基础配置
 
-Ubuntu 或者 Debian:
-
-```sh
-apt install -y qbittorrent-nox
-```
-
-CentOS:
+**安装**
 
 ```sh
-yum install -y qbittorrent-nox
+winget install JanDeDobbeleer.OhMyPosh -s winget
 ```
 
-## 启动
-
-安装完成后启动 qBittorrent：
+**添加到环境变量**
 
 ```sh
-qbittorrent-nox
+$env:Path += ";C:\Users\user\AppData\Local\Programs\oh-my-posh\bin"
 ```
 
-访问地址、用户名、密码：
+**更新**
 
 ```sh
-******** Information ********
-To control qBittorrent, access the Web UI at http://localhost:8080
-The Web UI administrator user name is: admin
-The Web UI administrator password is still the default one: adminadmin
-This is a security risk, please consider changing your password from program preferences
+winget upgrade JanDeDobbeleer.OhMyPosh -s winget
 ```
 
-让 qBittorrent 启动后在后台运行可以输入：
+### 主题配置
 
 ```sh
-qbittorrent-nox -d
+oh-my-posh init pwsh --config $env:POSH_THEMES_PATH\<theme.omp.json> | Invoke-Expression
 ```
 
-## 常用命令
-
-启动 qBittorrent：
+**如果要在全局生效, 那么我们需要在 $PROFILE 文件中写入该值:**
 
 ```sh
-qbittorrent-nox
+nano C:\Users\<username>\Documents\PowerShell\Microsoft.PowerShell_profile.ps1
 ```
 
-在后台启动 qBittorrent：
+添加上面的命令, 然后重启 PowerShell 即可生效.
 
-```sh
-qbittorrent-nox -d
-```
+### 主题列表
 
-查看版本：
-
-```sh
-qbittorrent-nox -v
-```
-
-启动 qBittorrent 并指定 Web 面板的端口：
-
-```sh
-qbittorrent-nox --webui-port=2333
-```
-
-上面指定 2333 端口。
-
-查看帮助：
-
-```sh
-qbittorrent-nox -h
-```
+- [agnosterplus](https://github.com/JanDeDobbeleer/oh-my-posh/blob/main/themes/agnosterplus.omp.json)
+![agnosterplus](./images/agnoster.png)
+- [aliens](https://github.com/JanDeDobbeleer/oh-my-posh/blob/main/themes/aliens.omp.json)
+![aliens](./images/aliens.png)
+- [amro](https://github.com/JanDeDobbeleer/oh-my-posh/blob/main/themes/amro.omp.json)
+![amro](./images/amro.png)
+- [catppuccin](https://github.com/JanDeDobbeleer/oh-my-posh/blob/main/themes/catppuccin_frappe.omp.json)
+![catppuccin](./images/catppuccin_frappe.png)

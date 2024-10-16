@@ -9,6 +9,27 @@ winget search vim
 winget install vim.vim
 ```
 
+## 配置
+
+```sh
+vim ~/.vimrc
+```
+添加以下内容：
+
+```sh
+syntax on
+
+set number
+set autoindent
+set tabstop=4
+set shiftwidth=4
+set expandtab
+set smartindent
+set backspace=2
+set incsearch
+set hlsearch
+set ruler
+```
 ## vim 键盘图
 
 ![vim graphical cheat sheet](./images/vim.png)

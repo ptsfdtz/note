@@ -1,4 +1,4 @@
-# nodejs
+# node-js
 
 ### 安装
 

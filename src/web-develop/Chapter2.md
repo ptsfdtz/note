@@ -18,5 +18,3 @@ npx create-react-app my-react-app
 ```sh
 npm start
 ```
-
-4. 项目初始化

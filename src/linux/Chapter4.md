@@ -38,6 +38,12 @@ This is a security risk, please consider changing your password from program pre
 qbittorrent-nox -d
 ```
 
+设置开机启动：
+
+```sh
+sudo systemctl enable qbittorrent-nox.service
+```
+
 ## 常用命令
 
 启动 qBittorrent：

@@ -798,9 +798,6 @@ npm -v # 应该打印 `10.8.2`】
 </ol>
 <pre><code class="language-sh">npm start
 </code></pre>
-<ol start="4">
-<li>项目初始化</li>
-</ol>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="openwrt"><a class="header" href="#openwrt">openwrt</a></h1>
 <h2 id="安装镜像"><a class="header" href="#安装镜像">安装镜像</a></h2>
 <p><a href="https://openwrt.ai/?target=x86%2F64&amp;id=generic">镜像站</a></p>
@@ -905,6 +902,9 @@ This is a security risk, please consider changing your password from program pre
 </code></pre>
 <p>让 qBittorrent 启动后在后台运行可以输入：</p>
 <pre><code class="language-sh">qbittorrent-nox -d
+</code></pre>
+<p>设置开机启动：</p>
+<pre><code class="language-sh">sudo systemctl enable qbittorrent-nox.service
 </code></pre>
 <h2 id="常用命令-1"><a class="header" href="#常用命令-1">常用命令</a></h2>
 <p>启动 qBittorrent：</p>

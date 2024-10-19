@@ -10,6 +10,7 @@
     - [oh-my-posh](./tool-usage/Chapter6.md)
     - [nano](./tool-usage/Chapter7.md)
     - [nodejs](./tool-usage/Chapter8.md)
+    - [winget](./tool-usage/Chapter9.md)
   - [搭建](./web-develop/Intro.md)
     - [mdbook](./web-develop/Chapter1.md)
     - [react](./web-develop/Chapter2.md)

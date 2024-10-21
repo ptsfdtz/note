@@ -20,6 +20,8 @@
     - [vim](./linux/Chapter2.md)
     - [Git](./linux/Chapter3.md)
     - [qbitorrent](./linux/Chapter4.md)
+    - [docker](./linux/Chapter5.md)
+    - [clash](./linux/Chapter6.md)
   - [learn](./learn/Intro.md)
     - [react](./learn/react/Intro.md)
       - [组件分类](./learn/react/Chapter1.md)

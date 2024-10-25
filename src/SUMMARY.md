@@ -15,6 +15,8 @@
     - [mdbook](./web-develop/Chapter1.md)
     - [react](./web-develop/Chapter2.md)
     - [openwrt](./web-develop/Chapter3.md)
+    - [hexo](./web-develop/Chapter4.md)
+    - [github-pages](./web-develop/Chapter5.md)
   - [linux](./linux/Intro.md)
     - [linux](./linux/Chapter1.md)
     - [vim](./linux/Chapter2.md)

@@ -97,3 +97,4 @@ winget install --id Tencent.QQ
 winget install --id Tencent.WeChat
 ```
 
+[winget.bat](blob:https://github.com/7d0f356c-c449-455f-ae61-81c27de91baa)

@@ -14,4 +14,8 @@ sudo apt-get install vim -y
 - 保存并退出文件：`:wq`    
 - 打开上一个文件：`:e #`    
 - 打开下一个文件：`:e #`    
-- 显示行号：`:set number`    
+- 显示行号：`:set number`   
+
+### 配置vim
+
+打开配置文件：`vim ~/.vimrc`

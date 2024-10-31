@@ -1,12 +1,4 @@
 @echo off
-echo 列出 winget 源
-winget source list
-
-echo 更新 winget 源
-winget source update
-
-echo 更新所有可更新的软件
-winget upgrade --all
 
 echo.
 echo 以下软件将被安装:

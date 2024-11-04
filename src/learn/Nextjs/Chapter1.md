@@ -1,4 +1,4 @@
-# Next.js 基础知识
+# Next.js 基础
 
 ### 1. 创建Next.js项目
 
@@ -23,3 +23,74 @@ npm run dev
 ```sh
 npm run build
 ```
+
+### 2. 路由定义
+
+Next.js使用文件系统作为路由，文件夹用来定义路由，文件用来定义页面。
+
+```sh 
+app/ # /
+├── page.js 
+└── dashboard/ # /dashboard
+    ├── page.js
+    └──settings # /dashboard/settings
+        ├── page.js 
+    └── analytics/ # n/a
+```
+
+### 3. Layouts
+
+**Root Layout**  根布局
+
+根布局文件为pages/_app.js，它是应用的入口文件，负责渲染整个应用的布局(必须的)。
+
+**Nesting Layouts**  嵌套布局
+
+Next.js允许你在页面之间嵌套布局，通过在页面文件夹下创建layout.js文件来实现。
+
+```sh
+app/ # /
+├── page.js 
+├── layout.js # 根布局文件
+└── dashboard/ # /dashboard
+    ├── page.js
+    ├── layout.js # 嵌套的布局文件
+    └──settings # /dashboard/settings
+        ├── page.js 
+        └── layout.js # 嵌套的布局文件
+```
+```tsx
+// layout.tsx
+import React from "react";
+
+function DashboardLayout({ children }) {
+  return (
+    <div>
+      <h1>Dashboard Layout</h1>
+      {children}
+    </div>
+  );
+}
+export default DashboardLayout;
+```
+
+### 4. templates
+
+```tsx
+// app/templates.tsx
+export default function Template({ children }: { children: React.ReactNode }) {
+  return <div>{children}</div>
+}
+```
+简单来说，`templates`在布局和子布局之间呈现，可以用来渲染一些通用的元素，比如头部、侧边栏等。
+```jsx
+// 简化的输出
+<layout>
+    <template key={routeParam}>{children}</template>
+</layout>
+```
+和`layout`不同，`template`只渲染一次，并且可以接收参数。
+
+templates在发生路由跳转时，会挂载子项的新实例，重新创建dom，重新创建 DOM 元素，客户端组件中不会保留状态，并且会重新同步效果。
+
+![templates](./images/关于template.png)

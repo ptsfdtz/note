@@ -47,5 +47,7 @@
       - [路由](./learn/vue/Chapter4.md)
     - [Next.js](./learn/Nextjs/Intro.md)
       - [基本使用](./learn/Nextjs/Chapter1.md)
+      - [页面效果](./learn/Nextjs/Chapter2.md)
+      - [优化界面](./learn/Nextjs/Chapter3.md)
     - [electron](./learn/electron/Intro.md)
       - [基本使用](./learn/electron/Chapter1.md)

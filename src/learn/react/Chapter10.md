@@ -1,9 +1,9 @@
 # -ref 和 context 
 
-**ref：** 用于获取真实dom
+**ref:** 用于获取真实dom
 
-**1. ref必须在挂载后才能获取，通常在componentDidMount中获取**
-**2. ref获取组件，不能获取函数组件**
+**1. ref必须在挂载后才能获取,通常在componentDidMount中获取**
+**2. ref获取组件,不能获取函数组件**
 
 ```jsx
 import './App.css';

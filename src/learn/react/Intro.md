@@ -1,4 +1,4 @@
-# react
+<img src="./images/react_original.png" alt="React" style="width: 300px; height: auto;" />
 
 ## 安装 Node.js
 

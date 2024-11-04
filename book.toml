@@ -1,9 +1,9 @@
 [book]
 authors = ["ptsfdtz"]
-language = "en"
-multilingual = false
+language = "zh-CN"
+multilingual = true
 src = "src"
 title = "notes"
 
 [preprocessor.embedify]
-scroll-to-top.enable = true
+scroll-to-top.enable = false

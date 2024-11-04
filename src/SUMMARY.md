@@ -40,12 +40,10 @@
       - [高阶组件](./learn/react/Chapter12.md)
       - [性能问题和优化](./learn/react/Chapter13.md)
       - [-router的使用](./learn/react/Chapter14.md)
-  
     - [vue](./learn/vue/Intro.md)
       - [组件](./learn/vue/Chapter1.md)
       - [指令](./learn/vue/Chapter2.md)
       - [过滤器](./learn/vue/Chapter3.md)
       - [路由](./learn/vue/Chapter4.md)
-    
-    - [Nextjs](./learn//Nextjs/Intro.md)
-      -[基础知识](./learn/Nextjs/Chapter1.md) 
+    - [Next.js](./learn/Nextjs/Intro.md)
+      - [基本使用](./learn/Nextjs/Chapter1.md)

@@ -1,6 +1,4 @@
-# Next.js
-
-![Next.js](./images/nextjs.png)
+<img src="./images/nextjs_icon.png" alt="nextjs_icon" width="300" height="auto" />
 
 ### React 
 

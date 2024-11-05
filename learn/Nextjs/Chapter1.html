@@ -241,6 +241,18 @@ export default function Template({ children }: { children: React.ReactNode }) {
 <p>和<code>layout</code>不同，<code>template</code>只渲染一次，并且可以接收参数。</p>
 <p>templates在发生路由跳转时，会挂载子项的新实例，重新创建dom，重新创建 DOM 元素，客户端组件中不会保留状态，并且会重新同步效果。</p>
 <p><img src="./images/%E5%85%B3%E4%BA%8Etemplate.png" alt="templates" /></p>
+<h3 id="5-_usepathname"><a class="header" href="#5-_usepathname">5. _usePathname()</a></h3>
+<p>usePathname()是一个自定义hook, 可以获得当前页面的路径。</p>
+<pre><code class="language-jsx">import { useRouter } from &quot;next/router&quot;;
+
+function MyComponent() {
+  const router = useRouter();
+  const pathname = usePathname();
+
+  return &lt;div&gt;{pathname}&lt;/div&gt;;
+}
+</code></pre>
+<p>以上的代码就可以查看当前页面的路径，比如：<code>http://localhost:3000/dashboard/settings</code>，pathname的值就是<code>'/dashboard/settings'</code>。</p>
 
                     </main>
 
